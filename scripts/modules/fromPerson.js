@@ -7,7 +7,7 @@ const createFormPerson = (n) => {
 
     const title = createElement('h2', {
         className: 'person__title',
-        textContent: `Пассажир #${n+1}`,
+        textContent: `Пассажир #${n++}`,
     });
 
     const fieldName = createElement('div', {
@@ -29,20 +29,20 @@ const createFormPerson = (n) => {
     });
     const labelTicket = createElement('label', {
         className: 'field__label',
+        for: `ticket${n}`,
         textContent: 'Номер билета (10 цифр)',
     });
-    const inputTicket = createElement('input', {
-        className: 'field__input',
-        id: `ticket${n}`,
-        name: 'ticket',
-        placeholder: 'Номер билета',
-        required: '',
-        minlength: '10',
-        maxlength: '10',
-    });
+
+    const inputTicket = inputName.cloneNode(false);
+    inputTicket.className = 'field__input';
+    inputTicket.id = `ticket${n}`;
+    inputTicket.name = 'ticket';
+    inputTicket.placeholder = 'Номер билета';
+    inputTicket.setAttribute('minlength', '10');
+    inputTicket.setAttribute('maxlength', '10');
 
     fieldName.append(labelName, inputName);
-    const fieldName2 = fieldName.cloneNode();
+    const fieldName2 = fieldName;
     fieldName2.append(labelTicket, inputTicket);
 
     const button = createElement('button', {

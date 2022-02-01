@@ -44,9 +44,9 @@ const start = (app, title) => {
     main.append(firstForm);
     app.append(h1, main);
     return {
-        main,
-        firstForm,
-    };
+      main,
+      firstForm,
+  };
 };
 
 export default start;
