@@ -7,7 +7,7 @@ const createFormPerson = (n) => {
 
     const title = createElement('h2', {
         className: 'person__title',
-        textContent: `Пассажир #${n++}`,
+        textContent: `Пассажир #${n+1}`,
     });
 
     const fieldName = createElement('div', {
